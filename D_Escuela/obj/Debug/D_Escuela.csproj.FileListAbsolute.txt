@@ -1,0 +1,9 @@
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\bin\Debug\D_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\bin\Debug\D_Escuela.pdb
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\bin\Debug\Ent_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\bin\Debug\Ent_Escuela.pdb
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\obj\Debug\D_Escuela.csproj.AssemblyReference.cache
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\obj\Debug\D_Escuela.csproj.CoreCompileInputs.cache
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\obj\Debug\D_Escuela.csproj.CopyComplete
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\obj\Debug\D_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\D_Escuela\obj\Debug\D_Escuela.pdb

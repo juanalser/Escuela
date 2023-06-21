@@ -1,0 +1,5 @@
+C:\Users\use\source\repos\PagoEscuela\Datos_Estudiantes\obj\Debug\net6.0\Datos_Escuela.csproj.AssemblyReference.cache
+C:\Users\use\source\repos\PagoEscuela\Datos_Estudiantes\obj\Debug\net6.0\Datos_Escuela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\use\source\repos\PagoEscuela\Datos_Estudiantes\obj\Debug\net6.0\Datos_Escuela.AssemblyInfoInputs.cache
+C:\Users\use\source\repos\PagoEscuela\Datos_Estudiantes\obj\Debug\net6.0\Datos_Escuela.AssemblyInfo.cs
+C:\Users\use\source\repos\PagoEscuela\Datos_Estudiantes\obj\Debug\net6.0\Datos_Escuela.csproj.CoreCompileInputs.cache

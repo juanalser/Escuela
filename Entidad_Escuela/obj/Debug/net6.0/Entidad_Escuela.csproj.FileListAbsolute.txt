@@ -1,0 +1,12 @@
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\bin\Debug\net6.0\Entidad_Escuela.deps.json
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\bin\Debug\net6.0\Entidad_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\bin\Debug\net6.0\Entidad_Escuela.pdb
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.csproj.AssemblyReference.cache
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.AssemblyInfoInputs.cache
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.AssemblyInfo.cs
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.csproj.CoreCompileInputs.cache
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\refint\Entidad_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\Entidad_Escuela.pdb
+C:\Users\use\source\repos\PagoEscuela\Entidad_Escuela\obj\Debug\net6.0\ref\Entidad_Escuela.dll

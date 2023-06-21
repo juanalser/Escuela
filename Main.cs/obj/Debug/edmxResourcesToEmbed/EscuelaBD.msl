@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="escuelaModelStoreContainer" CdmEntityContainer="escuelaEntities">
+    <EntitySetMapping Name="Administradors">
+      <EntityTypeMapping TypeName="escuelaModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="IDAdministrador" ColumnName="IDAdministrador" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estudiantes">
+      <EntityTypeMapping TypeName="escuelaModel.estudiante">
+        <MappingFragment StoreEntitySet="estudiante">
+          <ScalarProperty Name="IDESTUDIANTE" ColumnName="IDESTUDIANTE" />
+          <ScalarProperty Name="IDADMINISTRADOR" ColumnName="IDADMINISTRADOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="PADRE" ColumnName="PADRE" />
+          <ScalarProperty Name="MADRE" ColumnName="MADRE" />
+          <ScalarProperty Name="TUTOR" ColumnName="TUTOR" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="MOVIL" ColumnName="MOVIL" />
+          <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="CURSO" ColumnName="CURSO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="escuelaModel.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="IDFactura" ColumnName="IDFactura" />
+          <ScalarProperty Name="IDPago" ColumnName="IDPago" />
+          <ScalarProperty Name="IDEstudiante" ColumnName="IDEstudiante" />
+          <ScalarProperty Name="MesesPagos" ColumnName="MesesPagos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagoes">
+      <EntityTypeMapping TypeName="escuelaModel.Pago">
+        <MappingFragment StoreEntitySet="Pago">
+          <ScalarProperty Name="IDPago" ColumnName="IDPago" />
+          <ScalarProperty Name="IDEstudiante" ColumnName="IDEstudiante" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="escuelaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="escuelaModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_BuscarEstudiante" FunctionName="escuelaModel.Store.sp_BuscarEstudiante">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_BuscarEstudiante_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="Curso" ColumnName="Curso" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="MesesPagos" ColumnName="MesesPagos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="escuelaModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="escuelaModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_EditarAdministrador" FunctionName="escuelaModel.Store.sp_EditarAdministrador" />
+    <FunctionImportMapping FunctionImportName="sp_EditarEstudiante" FunctionName="escuelaModel.Store.sp_EditarEstudiante" />
+    <FunctionImportMapping FunctionImportName="sp_EditarPago" FunctionName="escuelaModel.Store.sp_EditarPago" />
+    <FunctionImportMapping FunctionImportName="sp_EliminarEstudiante" FunctionName="escuelaModel.Store.sp_EliminarEstudiante" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="escuelaModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="escuelaModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertarAdmin" FunctionName="escuelaModel.Store.sp_insertarAdmin" />
+    <FunctionImportMapping FunctionImportName="sp_InsertarEstudiante" FunctionName="escuelaModel.Store.sp_InsertarEstudiante" />
+    <FunctionImportMapping FunctionImportName="sp_InsertarFactura" FunctionName="escuelaModel.Store.sp_InsertarFactura" />
+    <FunctionImportMapping FunctionImportName="sp_InsertarPago" FunctionName="escuelaModel.Store.sp_InsertarPago" />
+    <FunctionImportMapping FunctionImportName="sp_InstertarEstudiante" FunctionName="escuelaModel.Store.sp_InstertarEstudiante" />
+    <FunctionImportMapping FunctionImportName="sp_MostrarAdministrador" FunctionName="escuelaModel.Store.sp_MostrarAdministrador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_MostrarAdministrador_Result">
+          <ScalarProperty Name="IDAdministrador" ColumnName="IDAdministrador" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MostrarEstudiante" FunctionName="escuelaModel.Store.sp_MostrarEstudiante">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_MostrarEstudiante_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Padre" ColumnName="Padre" />
+          <ScalarProperty Name="Madre" ColumnName="Madre" />
+          <ScalarProperty Name="Tutor" ColumnName="Tutor" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="Curso" ColumnName="Curso" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MostrarPago" FunctionName="escuelaModel.Store.sp_MostrarPago">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="escuelaModel.sp_MostrarPago_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="Curso" ColumnName="Curso" />
+          <ScalarProperty Name="Inscripcion" ColumnName="Inscripcion" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="MesesPagos" ColumnName="MesesPagos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="escuelaModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="escuelaModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

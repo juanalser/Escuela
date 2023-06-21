@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="escuelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="IDAdministrador" />
+    </Key>
+    <Property Name="IDAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inscripcion" Type="Int32" />
+    <Property Name="Mensualidad" Type="Int32" />
+    <NavigationProperty Name="estudiantes" Relationship="Self.FK__estudiant__IDADM__1A9EF37A" FromRole="Administrador" ToRole="estudiante" />
+  </EntityType>
+  <EntityType Name="estudiante">
+    <Key>
+      <PropertyRef Name="IDESTUDIANTE" />
+    </Key>
+    <Property Name="IDESTUDIANTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDADMINISTRADOR" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PADRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MADRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TUTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MOVIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AÑO" Type="DateTime" Precision="3" />
+    <Property Name="SERVICIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CURSO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Administrador" Relationship="Self.FK__estudiant__IDADM__1A9EF37A" FromRole="estudiante" ToRole="Administrador" />
+    <NavigationProperty Name="Facturas" Relationship="Self.FK__Factura__IDEstud__078C1F06" FromRole="estudiante" ToRole="Factura" />
+    <NavigationProperty Name="Facturas1" Relationship="Self.FK__Factura__IDEstud__0D44F85C" FromRole="estudiante" ToRole="Factura" />
+    <NavigationProperty Name="Facturas2" Relationship="Self.FK__Factura__IDEstud__13F1F5EB" FromRole="estudiante" ToRole="Factura" />
+    <NavigationProperty Name="Pagoes" Relationship="Self.FK__Pago__IDEstudian__0B5CAFEA" FromRole="estudiante" ToRole="Pago" />
+    <NavigationProperty Name="Pagoes1" Relationship="Self.FK__Pago__IDEstudian__10216507" FromRole="estudiante" ToRole="Pago" />
+    <NavigationProperty Name="Pagoes2" Relationship="Self.FK__Pago__IDEstudian__16CE6296" FromRole="estudiante" ToRole="Pago" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="IDFactura" />
+    </Key>
+    <Property Name="IDFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPago" Type="Int32" />
+    <Property Name="IDEstudiante" Type="Int32" />
+    <Property Name="MesesPagos" Type="Int32" />
+    <NavigationProperty Name="estudiante" Relationship="Self.FK__Factura__IDEstud__078C1F06" FromRole="Factura" ToRole="estudiante" />
+    <NavigationProperty Name="estudiante1" Relationship="Self.FK__Factura__IDEstud__0D44F85C" FromRole="Factura" ToRole="estudiante" />
+    <NavigationProperty Name="estudiante2" Relationship="Self.FK__Factura__IDEstud__13F1F5EB" FromRole="Factura" ToRole="estudiante" />
+    <NavigationProperty Name="Pago" Relationship="Self.FK__Factura__IDPago__0E391C95" FromRole="Factura" ToRole="Pago" />
+    <NavigationProperty Name="Pago1" Relationship="Self.FK__Factura__IDPago__14E61A24" FromRole="Factura" ToRole="Pago" />
+  </EntityType>
+  <EntityType Name="Pago">
+    <Key>
+      <PropertyRef Name="IDPago" />
+    </Key>
+    <Property Name="IDPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDEstudiante" Type="Int32" />
+    <Property Name="Inscripcion" Type="Int32" Nullable="false" />
+    <Property Name="Mensualidad" Type="Int32" Nullable="false" />
+    <Property Name="FechaPago" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="estudiante" Relationship="Self.FK__Pago__IDEstudian__0B5CAFEA" FromRole="Pago" ToRole="estudiante" />
+    <NavigationProperty Name="estudiante1" Relationship="Self.FK__Pago__IDEstudian__10216507" FromRole="Pago" ToRole="estudiante" />
+    <NavigationProperty Name="estudiante2" Relationship="Self.FK__Pago__IDEstudian__16CE6296" FromRole="Pago" ToRole="estudiante" />
+    <NavigationProperty Name="Facturas" Relationship="Self.FK__Factura__IDPago__0E391C95" FromRole="Pago" ToRole="Factura" />
+    <NavigationProperty Name="Facturas1" Relationship="Self.FK__Factura__IDPago__14E61A24" FromRole="Pago" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__estudiant__IDADM__1A9EF37A">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IDAdministrador" />
+      </Principal>
+      <Dependent Role="estudiante">
+        <PropertyRef Name="IDADMINISTRADOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__IDEstud__078C1F06">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__IDEstud__0D44F85C">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__IDEstud__13F1F5EB">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pago__IDEstudian__0B5CAFEA">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Pago">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pago__IDEstudian__10216507">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Pago">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pago__IDEstudian__16CE6296">
+    <End Role="estudiante" Type="Self.estudiante" Multiplicity="0..1" />
+    <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="IDESTUDIANTE" />
+      </Principal>
+      <Dependent Role="Pago">
+        <PropertyRef Name="IDEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__IDPago__0E391C95">
+    <End Role="Pago" Type="Self.Pago" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pago">
+        <PropertyRef Name="IDPago" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="IDPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Factura__IDPago__14E61A24">
+    <End Role="Pago" Type="Self.Pago" Multiplicity="0..1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pago">
+        <PropertyRef Name="IDPago" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="IDPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="escuelaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administradors" EntityType="Self.Administrador" />
+    <EntitySet Name="estudiantes" EntityType="Self.estudiante" />
+    <EntitySet Name="Facturas" EntityType="Self.Factura" />
+    <EntitySet Name="Pagoes" EntityType="Self.Pago" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__estudiant__IDADM__1A9EF37A" Association="Self.FK__estudiant__IDADM__1A9EF37A">
+      <End Role="Administrador" EntitySet="Administradors" />
+      <End Role="estudiante" EntitySet="estudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__IDEstud__078C1F06" Association="Self.FK__Factura__IDEstud__078C1F06">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__IDEstud__0D44F85C" Association="Self.FK__Factura__IDEstud__0D44F85C">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__IDEstud__13F1F5EB" Association="Self.FK__Factura__IDEstud__13F1F5EB">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pago__IDEstudian__0B5CAFEA" Association="Self.FK__Pago__IDEstudian__0B5CAFEA">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Pago" EntitySet="Pagoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pago__IDEstudian__10216507" Association="Self.FK__Pago__IDEstudian__10216507">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Pago" EntitySet="Pagoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pago__IDEstudian__16CE6296" Association="Self.FK__Pago__IDEstudian__16CE6296">
+      <End Role="estudiante" EntitySet="estudiantes" />
+      <End Role="Pago" EntitySet="Pagoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__IDPago__0E391C95" Association="Self.FK__Factura__IDPago__0E391C95">
+      <End Role="Pago" EntitySet="Pagoes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Factura__IDPago__14E61A24" Association="Self.FK__Factura__IDPago__14E61A24">
+      <End Role="Pago" EntitySet="Pagoes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_BuscarEstudiante" ReturnType="Collection(escuelaModel.sp_BuscarEstudiante_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Servicio" Mode="In" Type="String" />
+      <Parameter Name="Curso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EditarAdministrador">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Inscripcion" Mode="In" Type="Int32" />
+      <Parameter Name="Mensualidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EditarEstudiante">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Padre" Mode="In" Type="String" />
+      <Parameter Name="Madre" Mode="In" Type="String" />
+      <Parameter Name="Tutor" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Movil" Mode="In" Type="String" />
+      <Parameter Name="Año" Mode="In" Type="String" />
+      <Parameter Name="Curso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EditarPago">
+      <Parameter Name="IDPago" Mode="In" Type="Int32" />
+      <Parameter Name="Mensualidad" Mode="In" Type="Int32" />
+      <Parameter Name="MesesPagos" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EliminarEstudiante">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(escuelaModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(escuelaModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insertarAdmin">
+      <Parameter Name="Inscripcion" Mode="In" Type="Int32" />
+      <Parameter Name="Mensualidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertarEstudiante">
+      <Parameter Name="IDAdministrador" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Sexo" Mode="In" Type="String" />
+      <Parameter Name="Padre" Mode="In" Type="String" />
+      <Parameter Name="Madre" Mode="In" Type="String" />
+      <Parameter Name="Tutor" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Movil" Mode="In" Type="String" />
+      <Parameter Name="Año" Mode="In" Type="String" />
+      <Parameter Name="Servicio" Mode="In" Type="String" />
+      <Parameter Name="Curso" Mode="In" Type="String" />
+      <Parameter Name="Inscripcion" Mode="In" Type="Int32" />
+      <Parameter Name="Mensualidad" Mode="In" Type="Int32" />
+      <Parameter Name="FechaPago" Mode="In" Type="DateTime" />
+      <Parameter Name="MesesPagos" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertarFactura">
+      <Parameter Name="MesesPagos" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertarPago">
+      <Parameter Name="Inscripcion" Mode="In" Type="Int32" />
+      <Parameter Name="Mensualidad" Mode="In" Type="Int32" />
+      <Parameter Name="FechaPago" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InstertarEstudiante">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Sexo" Mode="In" Type="String" />
+      <Parameter Name="Padre" Mode="In" Type="String" />
+      <Parameter Name="Madre" Mode="In" Type="String" />
+      <Parameter Name="Tutor" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Movil" Mode="In" Type="String" />
+      <Parameter Name="Año" Mode="In" Type="String" />
+      <Parameter Name="Servicio" Mode="In" Type="String" />
+      <Parameter Name="Curso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_MostrarAdministrador" ReturnType="Collection(escuelaModel.sp_MostrarAdministrador_Result)" />
+    <FunctionImport Name="sp_MostrarEstudiante" ReturnType="Collection(escuelaModel.sp_MostrarEstudiante_Result)" />
+    <FunctionImport Name="sp_MostrarPago" ReturnType="Collection(escuelaModel.sp_MostrarPago_Result)" />
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_BuscarEstudiante_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Servicio" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Curso" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Inscripcion" Nullable="false" />
+    <Property Type="Int32" Name="Mensualidad" Nullable="false" />
+    <Property Type="String" Name="FechaPago" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MesesPagos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_MostrarAdministrador_Result">
+    <Property Type="Int32" Name="IDAdministrador" Nullable="false" />
+    <Property Type="Int32" Name="Inscripcion" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_MostrarEstudiante_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Padre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Madre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tutor" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Movil" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Año" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Servicio" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Curso" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Inscripcion" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_MostrarPago_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Servicio" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Curso" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Inscripcion" Nullable="false" />
+    <Property Type="Int32" Name="Mensualidad" Nullable="false" />
+    <Property Type="String" Name="FechaPago" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="MesesPagos" Nullable="true" />
+  </ComplexType>
+</Schema>

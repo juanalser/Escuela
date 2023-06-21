@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C76FDEF-9041-476F-9E11-BBC0F3FFD713}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Main.cs</RootNamespace>
+    <AssemblyName>Main.cs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Downloads\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Documents\Admin.cs">
+      <SubType>Form</SubType>
+      <Link>Admin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Documents\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+      <Link>Admin.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Desktop\Copia de Seguridad\AgregarEstudiante.cs">
+      <SubType>Form</SubType>
+      <Link>AgregarEstudiante.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Desktop\Copia de Seguridad\AgregarEstudiante.Designer.cs">
+      <DependentUpon>AgregarEstudiante.cs</DependentUpon>
+      <Link>AgregarEstudiante.Designer.cs</Link>
+    </Compile>
+    <Compile Include="Administrador.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen.Designer.cs">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EscuelaBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EscuelaBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EscuelaBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EscuelaBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EscuelaBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="escuelaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>escuelaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="estudiante.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoEstudiante.Designer.cs">
+      <DependentUpon>ListadoEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarEstudiante.Designer.cs">
+      <DependentUpon>MostrarEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarPagos.Designer.cs">
+      <DependentUpon>MostrarPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pago.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_BuscarEstudiante_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_MostrarAdministrador_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_MostrarEstudiante_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_MostrarPago_Result.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>EscuelaBD.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\..\Documents\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+      <Link>Admin.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\..\Desktop\Copia de Seguridad\AgregarEstudiante.resx">
+      <DependentUpon>AgregarEstudiante.cs</DependentUpon>
+      <Link>AgregarEstudiante.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen.resx">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoEstudiante.resx">
+      <DependentUpon>ListadoEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarEstudiante.resx">
+      <DependentUpon>MostrarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarPagos.resx">
+      <DependentUpon>MostrarPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="EscuelaBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EscuelaBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EscuelaBD.edmx.diagram">
+      <DependentUpon>EscuelaBD.edmx</DependentUpon>
+    </None>
+    <None Include="escuelaDataSet.xsc">
+      <DependentUpon>escuelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="escuelaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>escuelaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="escuelaDataSet.xss">
+      <DependentUpon>escuelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cerrar-ventana-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cerrar-ventana-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_back_to_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_calculator_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ent_Escuela\Ent_Escuela.csproj">
+      <Project>{ac49cd3d-8b33-4e09-9d20-890325e18f00}</Project>
+      <Name>Ent_Escuela</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\N_Escuela\N_Escuela.csproj">
+      <Project>{e7156d3b-0d37-4f3a-b9e3-722f5cd62ab9}</Project>
+      <Name>N_Escuela</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EscuelaBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EscuelaBD.Context.cs</LastGenOutput>
+      <DependentUpon>EscuelaBD.edmx</DependentUpon>
+    </Content>
+    <Content Include="EscuelaBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EscuelaBD.edmx</DependentUpon>
+      <LastGenOutput>EscuelaBD.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\png-transparent-computer-icons-student-symbol-reading-student.png" />
+    <None Include="Resources\png-transparent-computer-icons-management-chief-executive-manager-icon-black-silhouette-business.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\2881.png" />
+    <None Include="Resources\2880.png" />
+    <None Include="Resources\[removal.ai]_c4fd010a-edd8-42fd-b0dd-fac6bb2ef2e3.png" />
+    <None Include="Resources\image_%281%29-lD5uwKj3B-transformed.png" />
+    <None Include="Resources\listing-option.png" />
+    <None Include="Resources\plus-symbol-in-a-rounded-black-square.png" />
+    <None Include="Resources\user-shape.png" />
+    <None Include="Resources\download-axO0aVmSI-transformed2.jpeg" />
+    <None Include="Resources\download-axO0aVmSI-transformed1.jpeg" />
+    <None Include="Resources\download-axO0aVmSI-transformed.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

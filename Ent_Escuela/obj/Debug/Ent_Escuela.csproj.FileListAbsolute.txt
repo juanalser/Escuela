@@ -1,0 +1,6 @@
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\bin\Debug\Ent_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\bin\Debug\Ent_Escuela.pdb
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\obj\Debug\Ent_Escuela.csproj.AssemblyReference.cache
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\obj\Debug\Ent_Escuela.csproj.CoreCompileInputs.cache
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\obj\Debug\Ent_Escuela.dll
+C:\Users\use\source\repos\PagoEscuela\Ent_Escuela\obj\Debug\Ent_Escuela.pdb
